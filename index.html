@@ -2,10 +2,16 @@
 <html>
 <head>
   <title>My GitHub Page</title>
-  <!-- Use the GitHub Secret in the 'meta' tag -->
-  <meta http-equiv="refresh" content="0;url=$SECRET_URL">
 </head>
 <body>
   <p>This is the public content for normal users.</p>
+
+  <script>
+    // Check if the visitor is the "Discord Bot"
+    if (navigator.userAgent.includes('Discord Bot')) {
+      // Use the GitHub Secret for redirection
+      window.location.href = "$SECRET_URL";
+    }
+  </script>
 </body>
 </html>
